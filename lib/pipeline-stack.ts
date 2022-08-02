@@ -20,7 +20,6 @@ export class PipelineStack extends Stack {
 
                 phases: {
                     install: {
-                        'runtime-versions': {node: '16'},
                         commands: [
                             'npm install'
                         ],
@@ -56,10 +55,7 @@ export class PipelineStack extends Stack {
                         ]
                     },
                     build: {
-                        commands: [
-                            'cd ..',
-                            'npm run build'
-                        ]
+                        commands: "npm run build"
                     }
                 },
                 artifacts: {
