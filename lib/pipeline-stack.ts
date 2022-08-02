@@ -40,7 +40,7 @@ export class PipelineStack extends Stack {
                 },
             }),
             environment: {
-                buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_3,
+                buildImage: codebuild.LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/amazonlinux2-x86_64-standard:4.0')
             },
         });
 
