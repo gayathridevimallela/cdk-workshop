@@ -86,7 +86,7 @@ export class PipelineStack extends Stack {
                         new codepipeline_actions.GitHubSourceAction({
                             actionName: 'Checkout',
                             output: sourceOutput,
-                            owner: "gayathridevim",
+                            owner: "gayathridevimallela",
                             repo: "cdk-workshop",
                             oauthToken: SecretValue.plainText(props.githubToken),
                             trigger: codepipeline_actions.GitHubTrigger.WEBHOOK,
