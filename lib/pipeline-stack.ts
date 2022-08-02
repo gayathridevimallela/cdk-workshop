@@ -17,8 +17,10 @@ export class PipelineStack extends Stack {
         const cdkBuild = new codebuild.PipelineProject(this, 'CdkBuild', {
             buildSpec: codebuild.BuildSpec.fromObject({
                 version: '0.2',
+
                 phases: {
                     install: {
+                        'runtime-versions': {node: '16'},
                         commands: [
                             'npm install'
                         ],
@@ -38,7 +40,7 @@ export class PipelineStack extends Stack {
                 },
             }),
             environment: {
-                buildImage: codebuild.LinuxBuildImage.STANDARD_4_0,
+                buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_3,
             },
         });
 
@@ -54,7 +56,10 @@ export class PipelineStack extends Stack {
                         ]
                     },
                     build: {
-                        commands: "npm run build"
+                        commands: [
+                            'cd ..',
+                            'npm run build'
+                        ]
                     }
                 },
                 artifacts: {
