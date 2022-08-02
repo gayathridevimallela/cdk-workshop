@@ -12,7 +12,11 @@
   "types": "./hello.d.ts",
   "dependencies": {
     "@aws-sdk/client-connect": "^3.137.0",
-    "@aws-sdk/client-sts": "^3.137.0",
+    "@aws-sdk/client-sts": "^3.137.0"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.27",
+    "ts-node": "^10.9.1",
     "typescript": "~3.9.7"
   }
 }

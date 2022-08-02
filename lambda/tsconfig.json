@@ -24,9 +24,9 @@
       "./node_modules/@types"
     ]
   },
+  "include": ["hello.ts"],
   "exclude": [
     "node_modules",
-    "cdk.out",
-    "lambda"
+    "cdk.out"
   ]
 }
